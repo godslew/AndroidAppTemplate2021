@@ -44,12 +44,12 @@ android {
 }
 
 dependencies {
-    implementation(Dep.kotlinStdLib)
-    implementation(Dep.coreKtx)
-    implementation(Dep.appcompat)
-    implementation(Dep.material)
-    implementation(Dep.constraintLayout)
-    testImplementation(Dep.junit)
-    androidTestImplementation(Dep.extJUnit)
-    androidTestImplementation(Dep.espressoCore)
+    implementation(Dep.Kotlin.stdLib)
+    implementation(Dep.Ui.coreKtx)
+    implementation(Dep.Ui.appcompat)
+    implementation(Dep.Ui.material)
+    implementation(Dep.Ui.constraintLayout)
+    testImplementation(Dep.Test.junit)
+    androidTestImplementation(Dep.Test.extJUnit)
+    androidTestImplementation(Dep.Test.espressoCore)
 }

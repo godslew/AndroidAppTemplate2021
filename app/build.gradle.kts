@@ -2,6 +2,8 @@ plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("android.extensions")
+    kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -49,6 +51,10 @@ dependencies {
     implementation(Dep.Ui.appcompat)
     implementation(Dep.Ui.material)
     implementation(Dep.Ui.constraintLayout)
+    implementation(Dep.Dagger.hiltAndroid)
+    implementation("androidx.navigation:navigation-fragment-ktx:2.3.3")
+    implementation("androidx.navigation:navigation-ui-ktx:2.3.3")
+    kapt(Dep.Dagger.hiltCompiler)
     testImplementation(Dep.Test.junit)
     androidTestImplementation(Dep.Test.extJUnit)
     androidTestImplementation(Dep.Test.espressoCore)

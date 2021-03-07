@@ -12,6 +12,10 @@ object Ver {
         const val material = "1.3.0"
     }
 
+    object Dagger {
+        const val hilt = "2.28-alpha"
+    }
+
     //test
     object Test {
         const val junit = "4.13.2"

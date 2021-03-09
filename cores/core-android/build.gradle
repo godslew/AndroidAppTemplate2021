@@ -30,7 +30,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_1_8
     }
 
     dataBinding {
@@ -39,8 +39,9 @@ android {
 }
 
 dependencies {
+    api Dep.Kotlin.stdLib
     api Dep.Navigation.fragment
     api Dep.Navigation.ktx
-    api Dep.Navigation.safeArgs
     api Dep.Navigation.feature
+    kapt Dep.Dagger.hiltCompiler
 }

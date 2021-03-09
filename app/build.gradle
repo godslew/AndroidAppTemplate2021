@@ -2,10 +2,10 @@ import dependencies.AppConfig
 import dependencies.Dep
 
 plugins {
-    id 'com.android.library'
+    id 'com.android.application'
     id 'kotlin-android'
-    id 'kotlin-android-extensions'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -25,8 +25,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFile getDefaultProguardFile('proguard-android-optimize.txt')
-            proguardFile file('proguard-rules.pro')
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
             minifyEnabled false
@@ -37,7 +36,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = JavaVersion.VERSION_1_8
     }
 
     dataBinding {
@@ -47,14 +46,13 @@ android {
 
 dependencies {
     implementation project(':cores:core-android')
-    implementation Dep.Kotlin.stdLib
     implementation Dep.Ui.coreKtx
     implementation Dep.Ui.appcompat
     implementation Dep.Ui.material
     implementation Dep.Ui.constraintLayout
-    implementation Dep.Dagger.hiltAndroid
-    kapt Dep.Dagger.hiltCompiler
     testImplementation Dep.Test.junit
     androidTestImplementation Dep.Test.extJUnit
     androidTestImplementation Dep.Test.espressoCore
+    implementation Dep.Dagger.hiltAndroid
+    kapt Dep.Dagger.hiltCompiler
 }

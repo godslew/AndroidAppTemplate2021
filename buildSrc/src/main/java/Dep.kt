@@ -23,6 +23,13 @@ object Dep {
         const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${Ver.Dagger.hilt}"
     }
 
+    object Navigation {
+        const val fragment = "androidx.navigation:navigation-fragment-ktx:${Ver.Navigation.navigation}"
+        const val ktx = "androidx.navigation:navigation-ui-ktx:${Ver.Navigation.navigation}"
+        const val feature = "androidx.navigation:navigation-dynamic-features-fragment:${Ver.Navigation.navigation}"
+        const val safeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:${Ver.Navigation.navigation}"
+    }
+
     //test libs
     object Test {
         const val junit = "junit:junit:${Ver.Test.junit}"

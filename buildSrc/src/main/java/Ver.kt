@@ -16,6 +16,10 @@ object Ver {
         const val hilt = "2.28-alpha"
     }
 
+    object Navigation {
+        const val navigation = "2.3.3"
+    }
+
     //test
     object Test {
         const val junit = "4.13.2"

@@ -1,11 +1,13 @@
+package dependencies
+
 object Dep {
     //gradle
     const val gradle = "com.android.tools.build:gradle:${Ver.gradle}"
 
     object Kotlin {
         private const val version = "1.4.31"
-        const val stdLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${version}"
-        const val gradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:${version}"
+        const val stdLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$version"
+        const val gradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
     }
 
     //android ui

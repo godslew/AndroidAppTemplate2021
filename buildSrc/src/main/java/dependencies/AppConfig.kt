@@ -1,3 +1,5 @@
+package dependencies
+
 //app level config constants
 object AppConfig {
     const val compileSdk = 30

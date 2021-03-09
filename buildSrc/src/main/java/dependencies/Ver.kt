@@ -1,3 +1,5 @@
+package dependencies
+
 //version constants for the Kotlin DSL dependencies
 object Ver {
     //app level

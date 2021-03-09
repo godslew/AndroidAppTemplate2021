@@ -1,0 +1,60 @@
+import dependencies.AppConfig
+import dependencies.Dep
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion AppConfig.compileSdk
+    buildToolsVersion AppConfig.buildToolsVersion
+
+    defaultConfig {
+        applicationId 'com.godslew.androidapptemplate2021'
+        minSdkVersion AppConfig.minSdk
+        targetSdkVersion AppConfig.targetSdk
+        versionCode AppConfig.versionCode
+        versionName AppConfig.versionName
+
+        testInstrumentationRunner AppConfig.androidTestInstrumentation
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFile getDefaultProguardFile('proguard-android-optimize.txt')
+            proguardFile file('proguard-rules.pro')
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation project(':cores:core-android')
+    implementation Dep.Kotlin.stdLib
+    implementation Dep.Ui.coreKtx
+    implementation Dep.Ui.appcompat
+    implementation Dep.Ui.material
+    implementation Dep.Ui.constraintLayout
+    implementation Dep.Dagger.hiltAndroid
+    kapt Dep.Dagger.hiltCompiler
+    testImplementation Dep.Test.junit
+    androidTestImplementation Dep.Test.extJUnit
+    androidTestImplementation Dep.Test.espressoCore
+}
